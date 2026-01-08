@@ -4,9 +4,9 @@ import sys
 import os
 
 # Add the parent directory to the path so we can import date_utils
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, '../date-utils')
 
-from date-utils.date_utils import day_of_year, day_of_year_business
+from date_utils import day_of_year, day_of_year_business
 
 
 class TestDateUtils(unittest.TestCase):
