@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "py-utils"
-version = "0.1.0"
+version = "0.2.0"
 description = "A collection of Python utility functions for date operations"
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -27,9 +27,9 @@ requires-python = ">=3.8"
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/yourusername/py-utils"
-Repository = "https://github.com/yourusername/py-utils.git"
-Issues = "https://github.com/yourusername/py-utils/issues"
+Homepage = "https://github.com/tersesquirrel-dev/py-utils"
+Repository = "https://github.com/tersesquirrel-dev/py-utils.git"
+Issues = "https://github.com/tersesquirrel-dev/py-utils/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
