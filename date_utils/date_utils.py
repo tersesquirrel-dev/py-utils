@@ -2,6 +2,18 @@ import datetime
 
 
 class DateUtils:
+    _holidays = set()
+    @staticmethod
+    def set_holidays(holidays):
+        """Set a list of holidays to exclude from business day calculations.
+        
+        Args:
+            holidays: List of dates (date objects, datetime objects, or strings in YYYY-MM-DD format)
+        """
+        DateUtils._holidays = set()
+        for holiday in holidays:
+            DateUtils._holidays.add(DateUtils._normalize_date(holiday))
+
     @staticmethod
     def _normalize_date(date):
         """Convert string or datetime to date object."""
@@ -29,7 +41,7 @@ class DateUtils:
         current_date = start_date
         
         while current_date <= date:
-            if current_date.weekday() < 5:  # Monday=0, Friday=4
+            if current_date.weekday() < 5 and current_date not in DateUtils._holidays:  # Monday=0, Friday=4 and not a holiday
                 business_days += 1
             current_date += datetime.timedelta(days=1)
         
